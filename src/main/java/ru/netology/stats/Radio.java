@@ -29,9 +29,6 @@ public class Radio {
     }
 
     public void setCurrentStation(int newCurrentStation) {
-        if (newCurrentStation < 0) {
-            return;
-        }
         if (newCurrentStation > 9) {
             return;
         }
