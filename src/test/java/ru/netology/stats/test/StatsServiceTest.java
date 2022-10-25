@@ -116,16 +116,7 @@ public class StatsServiceTest {
     }
 
     @Test
-    void setRadioStationNegativeTest() {
-        Radio rad = new Radio();
-        int station = 0;
-        rad.setStation(station);
-        rad.setCurrentStation(-5);
-        int actual = rad.getCurrentStation();
-        int expected = 0;
 
-        assertEquals(expected, actual);
-    }
 
     @Test
     void increaseVolumeRadio10Test() {
