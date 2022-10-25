@@ -42,7 +42,7 @@ public class StatsServiceTest {
     @Test
     void nextRadioStation3Test() {
 
-        Radio rad = new Radio();
+        Radio rad = new Radio(16);
         int station = 3;
 
         rad.setStation(station);
@@ -69,12 +69,12 @@ public class StatsServiceTest {
 
     @Test
     void prevRadioStation0Test() {
-        Radio rad = new Radio();
+        Radio rad = new Radio(100);
         int station = 0;
         rad.setStation(station);
         rad.prevStation();
         int actual = rad.getCurrentStation();
-        int expected = 9;
+        int expected = 99;
 
         assertEquals(expected, actual);
     }
@@ -92,7 +92,7 @@ public class StatsServiceTest {
     }
 
     @Test
-    void setRadioStation10Test() {
+    void setRadioStationDefaultNegativeTest() {
         Radio rad = new Radio();
         int station = 0;
         rad.setStation(station);
@@ -117,24 +117,24 @@ public class StatsServiceTest {
 
     @Test
     void setRadioStationNegativeTest() {
-        Radio rad = new Radio();
-        int station = 0;
+        Radio rad = new Radio(100);
+        int station = 10;
         rad.setStation(station);
-        rad.setCurrentStation(-5);
+        rad.setCurrentStation(101);
         int actual = rad.getCurrentStation();
-        int expected = 0;
+        int expected = 10;
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void increaseVolumeRadio10Test() {
+    void increaseVolumeRadioMaxTest() {
         Radio rad = new Radio();
-        int volume = 10;
+        int volume = 100;
         rad.setVolume(volume);
         rad.increaseVolume();
         int actual = rad.getCurrentVolume();
-        int expected = 10;
+        int expected = 100;
 
         assertEquals(expected, actual);
     }
