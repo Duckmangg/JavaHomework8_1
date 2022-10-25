@@ -115,8 +115,6 @@ public class StatsServiceTest {
         assertEquals(expected, actual);
     }
 
-    @Test
-
 
     @Test
     void increaseVolumeRadio10Test() {
